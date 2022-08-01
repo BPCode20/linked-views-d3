@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+#heatmap_plot {
+    align-self: center;
+}
+
+#scatter_plot {
+    align-self: center;
+}
+
+.center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.axis { font: 12px sans-serif;}
+
+.tick line{
+  visibility:hidden;
+}
+.domain{
+  visibility:hidden;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Linked Views</title>
+    <link rel="stylesheet" href="../static/styles/basic.css">
+    <script src="https://d3js.org/d3.v5.js"></script>
+</head>
+
+<body>
+    <h1>Linked Views</h1>
+    <h3>Visualisation of the <a href="https://www.oecdbetterlifeindex.org ">better life index data</a>.</h3>
+
+    <div class="center">
+        <div style="display: inline" id="heatmap_plot"></div>
+        <div style="display: inline" id="scatter_plot"></div>
+    </div>
+<div id="test"></div>
+</body>
+
+</html>
+
+<script src="../static/js/static_values.js"></script>
+<script src="../static/js/scatter_plot.js"></script>
+<script src="../static/js/heatmap_plot.js"></script>
+<script type="text/javascript">
+    // Load data from jinja2
+    var bli_data = {{ bli_data | safe }}
+    var pca_data = {{ pca_data | safe }}
+
+    // create
+    var colorMap = d3.scaleLinear()
+        .range([MAIN_COLOR_RANGE_START, MAIN_COLOR_RANGE_END])
+        .domain([RANGE_START_VALUE, RANGE_END_VALUE]);
+
+    createScatterplot(pca_data);
+    createHeatmap(bli_data);
+
+</script >
+
+
